@@ -15,19 +15,10 @@
         onload="shell.start();"
         onunload="shell.stop();">
 
-  <!-- B2G Desktop has a weird bug that causes it not to show app content
-     - if we load a script early, even if the script doesn't do anything.
-     - To work around it, we wait until ContentStart to load the script. -->
-  <!--<script type="application/javascript" src="chrome://prosthesis/content/shell.js"/>-->
-  <script type="application/javascript">
-    window.addEventListener("ContentStart", function() {
-      Services.scriptloader.loadSubScript("chrome://prosthesis/content/shell.js");
-      Services.scriptloader.loadSubScript("chrome://prosthesis/content/mutation-summary.js");
-      Services.scriptloader.loadSubScript("chrome://prosthesis/content/lockscreen.js");
-      Services.scriptloader.loadSubScript("chrome://prosthesis/content/window-manager.js");
-    }, false);
-  </script>
-
+  <script type="application/javascript" src="chrome://prosthesis/content/shell.js"/>
+  <script type="application/javascript" src="chrome://prosthesis/content/mutation-summary.js"/>
+  <script type="application/javascript" src="chrome://prosthesis/content/lockscreen.js"/>
+  <script type="application/javascript" src="chrome://prosthesis/content/window-manager.js"/>
   <script type="application/javascript" src="chrome://prosthesis/content/dbgport.js"/>
   <script type="application/javascript" src="chrome://prosthesis/content/pbport.js"/>
   <script type="application/javascript" src="chrome://browser/content/settings.js"/>
